@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>思维导图 — 稳态之下</title>
+<meta name="description" content="稳态之下完整知识体系思维导图">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header class="topbar">
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="菜单">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="topbar-logo" href="index.html">
+    <span class="topbar-logo-icon">稳</span>
+    <span class="topbar-logo-text">
+      <span class="topbar-logo-cn">稳态之下</span>
+      <span class="topbar-logo-en">Beneath Homeostasis</span>
+    </span>
+  </a>
+  <nav class="topbar-nav">
+    <a href="index.html" class="">首页</a>
+    <a href="doc.html" class="">文档</a>
+    <a href="mindmap.html" class="active">思维导图</a>
+  </nav>
+  <div class="topbar-search">
+    <svg class="topbar-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="topbar-search-input" placeholder="搜索全部内容..." readonly>
+    <span class="topbar-search-kbd">Ctrl K</span>
+  </div>
+  <div class="topbar-author">
+    <a href="https://github.com/Ggy-king" target="_blank" rel="noopener" title="GitHub">
+      <img class="topbar-author-avatar" src="https://avatars.githubusercontent.com/u/102906132?v=4" alt="king" width="32" height="32">
+    </a>
+    <div class="topbar-author-info">
+      <span class="topbar-author-name">king</span>
+      <span class="topbar-author-bio">向阳而生</span>
+    </div>
+  </div>
+  <div class="topbar-contact">
+    <a class="topbar-contact-btn" href="mailto:a18581897806@outlook.com" title="发送邮件">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </a>
+    <a class="topbar-contact-btn" href="tel:18581897806" title="微信/手机：18581897806">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="切换主题"></button>
+</header>
+
+<div class="mindmap-page">
+  <div class="mindmap-canvas" id="mindmap-canvas">
+    <svg class="mindmap-svg" id="mindmap-svg"></svg>
+  </div>
+</div>
+
+<div class="mindmap-hint">
+  <strong>操作提示</strong><br>
+  拖拽：平移画布<br>
+  滚轮：缩放<br>
+  点击节点：展开/折叠<br>
+  双击节点：居中
+</div>
+
+<div class="mindmap-legend">
+  <div class="mindmap-legend-title">图例</div>
+  <div class="mindmap-legend-item">
+    <span class="mindmap-legend-dot" style="background:linear-gradient(135deg,#7c3aed,#06b6d4)"></span>
+    中心主题
+  </div>
+  <div class="mindmap-legend-item">
+    <span class="mindmap-legend-dot" style="background:#7c3aed"></span>
+    卷（9卷）
+  </div>
+  <div class="mindmap-legend-item">
+    <span class="mindmap-legend-dot" style="background:#06b6d4"></span>
+    章（78章）
+  </div>
+  <div class="mindmap-legend-item">
+    <span class="mindmap-legend-dot" style="background:#10b981"></span>
+    小节（331节）
+  </div>
+</div>
+
+<div class="mindmap-toolbar">
+  <button class="mindmap-toolbar-btn" id="mindmap-zoom-out" title="缩小">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+  </button>
+  <span class="mindmap-toolbar-info" id="mindmap-zoom-info">100%</span>
+  <button class="mindmap-toolbar-btn" id="mindmap-zoom-in" title="放大">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+  </button>
+  <button class="mindmap-toolbar-btn" id="mindmap-center" title="居中视图">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+  </button>
+  <button class="mindmap-toolbar-btn" id="mindmap-expand-all" title="展开全部">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+  </button>
+  <button class="mindmap-toolbar-btn" id="mindmap-collapse-all" title="折叠全部">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+  </button>
+</div>
+
+<script>
+window.__MINDMAP_DATA__ = {"name": "稳态之下", "children": [{"name": "01 生物底层与大脑本质", "children": [{"name": "1.1 生命的本质：熵减、稳态与生存", "children": [{"name": "热力学第二定律与生命"}, {"name": "稳态：生命的核心操作"}, {"name": "生存的本质"}]}, {"name": "1.2 从应激性到神经系统：进化的底层逻辑", "children": [{"name": "单细胞生物的应激性"}, {"name": "多细胞生物与细胞间通讯"}, {"name": "神经系统的进化阶梯"}, {"name": "进化的核心原则：够用就好"}]}, {"name": "1.3 大脑的本质：生存预测与稳态调节机器", "children": [{"name": "不是思考机器，不是快乐机器"}, {"name": "20%的能量，只为一件事"}, {"name": "所有心理现象都是底层系统的输出"}, {"name": "大脑不关心真相，只关心生存"}]}, {"name": "1.4 预测编码：大脑如何构建现实", "children": [{"name": "预测编码理论"}, {"name": "自由能原理"}, {"name": "大脑看到的不是世界，而是预测"}, {"name": "情绪的预测编码解释"}, {"name": "社会威胁的预测编码"}]}, {"name": "1.5 内感受：岛叶与身体状态的感知", "children": [{"name": "什么是内感受"}, {"name": "岛叶：内感受的核心脑区"}, {"name": "情绪本质上是对身体状态的感知"}, {"name": "内感受准确性与情绪调节"}, {"name": "关键洞察：很多\"情绪问题\"其实是\"身体问题\""}]}, {"name": "1.6 \"我\"是谁：自我意识的神经基础与哲学定位", "children": [{"name": "自我意识不是一个\"东西\"，而是一个过程"}, {"name": "大脑是硬件，\"我\"是操作系统/用户界面"}, {"name": "默认模式网络：自我叙事的神经基础"}, {"name": "脑裂人研究：左脑的\"解释器\""}, {"name": "自由意志的神经科学"}, {"name": "驾驶员比喻"}]}]}, {"name": "02 进化心理学底层", "children": [{"name": "2.1 进化的基本逻辑", "children": [{"name": "自然选择：进化的核心机制"}, {"name": "进化的\"目标\"不是幸福，是繁衍"}, {"name": "性选择：繁衍竞争的另一条路径"}, {"name": "亲缘选择：为什么人会为亲人牺牲"}, {"name": "进化是\"修补匠\"，不是\"设计师\""}]}, {"name": "2.2 人类进化史：从猿到人", "children": [{"name": "时间线概览"}, {"name": "关键进化事件"}, {"name": "狩猎采集社会：人类本性的\"出厂设置\""}]}, {"name": "2.3 进化适应环境（EEA）与现代环境的错配", "children": [{"name": "什么是进化错配"}, {"name": "常见的进化错配"}, {"name": "进化错配的核心启示"}]}, {"name": "2.4 人性的进化起源：各种情绪和行为的进化功能", "children": [{"name": "恐惧（Fear）"}, {"name": "愤怒（Anger）"}, {"name": "悲伤/抑郁（Sadness/Depression）"}, {"name": "嫉妒（Jealousy）"}, {"name": "羞耻（Shame）与内疚（Guilt）"}, {"name": "厌恶（Disgust）"}, {"name": "惊讶（Surprise）"}, {"name": "快乐/喜悦（Joy/Happiness）"}, {"name": "爱（Love）"}]}, {"name": "2.5 亲代投资理论与两性差异的进化根源", "children": [{"name": "亲代投资理论"}, {"name": "两性差异的具体表现"}, {"name": "对现代社会的启示"}]}, {"name": "2.6 互惠利他与道德的进化萌芽", "children": [{"name": "利他行为的进化难题"}, {"name": "1. 亲缘选择（Kin Selection）"}, {"name": "2. 互惠利他（Reciprocal Altruism）"}, {"name": "3. 强互惠（Strong Reciprocity）"}, {"name": "道德的进化起源"}, {"name": "对现代社会的启示"}]}]}, {"name": "03 神经与生理机制", "children": [{"name": "3.1 神经系统结构与功能分工", "children": [{"name": "中枢神经系统与外周神经系统"}, {"name": "脑的主要结构与功能"}, {"name": "关键脑区与情绪/行为的对应速查"}]}, {"name": "3.2 激素与神经递质全景图", "children": [{"name": "神经递质与激素的区别"}, {"name": "主要神经递质"}, {"name": "主要激素"}]}, {"name": "3.3 HPA轴与压力反应", "children": [{"name": "HPA轴是什么"}, {"name": "急性压力反应（适应性）"}, {"name": "慢性压力反应（破坏性）"}, {"name": "皮质醇觉醒反应（CAR）"}, {"name": "压力的个体差异"}]}, {"name": "3.4 稳态与变构负荷", "children": [{"name": "稳态（Homeostasis）"}, {"name": "变构（Allostasis）"}, {"name": "变构负荷（Allostatic Load）"}, {"name": "稳态失衡的常见来源"}]}, {"name": "3.5 血糖与大脑能量供给", "children": [{"name": "大脑对葡萄糖的依赖"}, {"name": "低血糖的生理连锁反应"}, {"name": "血糖波动与情绪"}, {"name": "持续供能 vs 快速供能"}, {"name": "晨间低血糖与晨间崩溃"}]}, {"name": "3.6 睡眠与神经修复", "children": [{"name": "睡眠的阶段"}, {"name": "睡眠的功能"}, {"name": "睡眠剥夺的影响"}, {"name": "睡眠惯性（Sleep Inertia）"}, {"name": "睡眠卫生（Sleep Hygiene）"}]}, {"name": "3.7 脱水与电解质", "children": [{"name": "脱水对认知和情绪的影响"}, {"name": "常见的脱水原因"}, {"name": "电解质的作用"}, {"name": "镁：最容易缺乏也最重要的电解质"}, {"name": "脱水与晨间状态"}]}, {"name": "3.8 营养与神经递质合成", "children": [{"name": "神经递质的前体来自食物"}, {"name": "关键营养素详解"}, {"name": "营养与身心状态"}]}, {"name": "3.9 体温与代谢", "children": [{"name": "核心体温与认知功能"}, {"name": "过热与烦躁"}, {"name": "体温与昼夜节律"}, {"name": "代谢率与能量消耗"}]}, {"name": "3.10 昼夜节律", "children": [{"name": "生物钟：视交叉上核（SCN）"}, {"name": "昼夜节律的主要参数"}, {"name": "昼夜节律紊乱的后果"}, {"name": "下午低谷"}, {"name": "校准昼夜节律的方法"}]}]}, {"name": "04 情绪与痛苦的解码", "children": [{"name": "4.1 痛苦的统一神经基质", "children": [{"name": "一个颠覆性的发现：社会性痛苦和生理性痛苦激活同一个脑区"}, {"name": "疼痛的两个成分：感觉成分 vs 情绪成分"}, {"name": "痛苦的进化功能"}, {"name": "痛苦的统一模型"}]}, {"name": "4.2 生理性痛苦 vs 社会性痛苦", "children": [{"name": "一个有趣的发现：对乙酰氨基酚（泰诺）能减轻社会性痛苦"}, {"name": "关键区别：触发源的真实性"}]}, {"name": "4.3 焦虑的本质：威胁检测系统", "children": [{"name": "焦虑 vs 恐惧"}, {"name": "焦虑的神经回路"}, {"name": "焦虑的生理表现"}, {"name": "焦虑的进化功能"}, {"name": "焦虑的认知模式：灾难化和过度担忧"}, {"name": "焦虑的\"能量模型\""}]}, {"name": "4.4 多巴胺系统：欲望、驱动力与绑架", "children": [{"name": "多巴胺不是\"快乐分子\""}, {"name": "多巴胺的核心功能：奖励预测误差"}, {"name": "多巴胺的\"渴望-满足\"循环"}, {"name": "多巴胺绑架：社会灌输如何劫持多巴胺系统"}, {"name": "多巴胺阈值与枯竭"}, {"name": "多巴胺的健康调节"}]}, {"name": "4.5 满足系统：血清素与内啡肽", "children": [{"name": "血清素：稳定与满足"}, {"name": "血清素与社会地位"}, {"name": "内啡肽：天然止痛药与愉悦"}, {"name": "\"喜欢\"系统：大脑的享乐热点"}, {"name": "多巴胺 vs 血清素 vs 内啡肽：三种\"快乐\"的区别"}]}, {"name": "4.6 催产素与社会连接", "children": [{"name": "催产素：联结与信任"}, {"name": "催产素与亲密关系"}, {"name": "催产素与亲子依恋"}, {"name": "催产素的\"阴暗面\"：内群体偏好与外群体敌意"}, {"name": "共同调节（Co-regulation）"}, {"name": "催产素与\"缺爱\"感"}]}, {"name": "4.7 去甲肾上腺素与警觉", "children": [{"name": "去甲肾上腺素：警觉与注意力"}, {"name": "蓝斑：大脑的\"警报器\""}, {"name": "去甲肾上腺素与焦虑/恐慌"}, {"name": "去甲肾上腺素与抑郁"}, {"name": "去甲肾上腺素的健康调节"}]}, {"name": "4.8 愤怒与攻击的神经机制", "children": [{"name": "愤怒的进化功能"}, {"name": "愤怒的神经回路"}, {"name": "愤怒的生理表现"}, {"name": "愤怒的\"热\"与\"冷\""}, {"name": "身体状态差时为什么更容易愤怒"}, {"name": "健康的愤怒管理"}]}, {"name": "4.9 悲伤与抑郁的神经机制", "children": [{"name": "悲伤的进化功能"}, {"name": "悲伤的神经机制"}, {"name": "悲伤的生理表现"}, {"name": "\"心碎\"的科学：Takotsubo心肌病"}, {"name": "抑郁：悲伤的\"故障模式\""}, {"name": "抑郁的\"能量模型\""}]}, {"name": "4.10 羞耻与内疚的神经机制", "children": [{"name": "羞耻 vs 内疚"}, {"name": "羞耻的进化功能"}, {"name": "脸红：羞耻的独特生理信号"}, {"name": "羞耻的神经机制"}, {"name": "身体状态差时羞耻感被放大"}, {"name": "健康的羞耻调节"}]}, {"name": "4.11 情绪错位归因：为什么身体差时会\"随便找借口\"", "children": [{"name": "Schachter-Singer双因素理论"}, {"name": "情绪错位归因（Misattribution of Arousal）"}, {"name": "\"晨间崩溃\"就是情绪错位归因"}, {"name": "情绪错位归因的普遍性"}, {"name": "如何利用情绪错位归因"}]}, {"name": "4.12 情绪的双因素理论与建构主义", "children": [{"name": "情绪的建构主义观点"}, {"name": "情绪建构主义的实践意义"}, {"name": "情绪的\"预测加工\"模型"}, {"name": "本卷的终极结论"}]}]}, {"name": "05 社会现象的生物学解码", "children": [{"name": "5.1 社会评价类：被责骂、被否定、被批评、被嘲笑、被看不起、羞耻、尴尬、被注视", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.2 社会比较类：嫉妒、攀比、自卑、优越感、FOMO、社会地位焦虑", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.3 社会连接类：孤独、被排斥、被孤立、分手、失恋、背叛、信任破裂、归属感缺失", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.4 竞争与资源类：竞争焦虑、稀缺感、金钱焦虑、失业恐惧、资源争夺、贫富差距感", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.5 道德与规则类：内疚、罪恶感、道德义愤、公平感、被不公正对待、规则焦虑、被插队", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.6 亲密关系类：爱情、依恋、亲密关系中的嫉妒、心碎、依赖、分离焦虑、择偶焦虑", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.7 群体与归属类：从众、群体压力、集体认同、内群体偏好、外群体敌意、民族主义、被群体接纳/排斥", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.8 成就与意义类：成就感、挫败感、意义感缺失、存在焦虑、死亡恐惧、中年危机", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.9 日常社会摩擦类：排队烦躁、路怒症、网络暴力、被打扰、公共空间冲突、噪音烦躁", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "5.10 自我意识类：自我怀疑、完美主义、拖延、身份焦虑、自我认同、冒名顶替综合征", "children": [{"name": "触发机制"}, {"name": "进化根源"}, {"name": "生理表现"}, {"name": "身体机能差时为何被放大"}, {"name": "深层解法方向"}]}, {"name": "本卷总结：社会现象的生物学解码的核心逻辑", "children": [{"name": "1. 所有社会痛苦共享同一个神经基质"}, {"name": "2. 所有社会现象都有进化根源"}, {"name": "3. 现代社会中的过度反应是进化错配"}, {"name": "4. 身体状态决定情绪强度"}, {"name": "5. 情绪错位归因：身体不适被错误标签为社会痛苦"}, {"name": "6. 解法的核心：身体优先 + 认知解离 + 真实行动"}]}]}, {"name": "06 文明与文化的生物学推演", "children": [{"name": "6.1 道德的进化起源", "children": [{"name": "道德不是\"神的旨意\"，是进化的产物"}, {"name": "1. 亲缘利他：道德的起点"}, {"name": "2. 互惠利他：道德的扩展"}, {"name": "3. 强互惠：道德的维护"}, {"name": "道德的神经基础"}, {"name": "道德的\"五基础\"理论"}, {"name": "道德的生物学推演的核心结论"}]}, {"name": "6.2 宗教的生物学基础", "children": [{"name": "宗教不是\"迷信\"，是进化的副产品和适应器"}, {"name": "1. 宗教是\"超能动体检测\"的副产品"}, {"name": "2. 宗教缓解存在焦虑和死亡恐惧"}, {"name": "3. 宗教促进群体合作和凝聚"}, {"name": "4. 宗教的神经基础"}, {"name": "5. 宗教的\"双面性\""}, {"name": "宗教的生物学推演的核心结论"}]}, {"name": "6.3 国家与民族的生物学基础", "children": [{"name": "国家不是\"社会契约\"，是群体认同的扩展形式"}, {"name": "1. 从部落到国家：群体规模的扩展"}, {"name": "2. 国家和民族的神经基础：集体认同"}, {"name": "3. 民族主义的进化功能和危险"}, {"name": "4. 爱国主义 vs 民族主义"}, {"name": "5. 国家的\"虚构\"本质"}, {"name": "国家的生物学推演的核心结论"}]}, {"name": "6.4 经济与金钱的生物学基础", "children": [{"name": "金钱不是\"财富\"，是资源的抽象代表"}, {"name": "1. 金钱激活大脑的奖赏系统"}, {"name": "2. 损失厌恶：失去比得到更痛苦"}, {"name": "3. 金钱焦虑：资源焦虑的现代形式"}, {"name": "4. 金钱与幸福的关系：伊斯特林悖论"}, {"name": "5. 消费主义：多巴胺劫持的经济形式"}, {"name": "经济与金钱的生物学推演的核心结论"}]}, {"name": "6.5 婚姻与家庭的进化起源", "children": [{"name": "婚姻不是\"爱情的坟墓\"，是合作育幼的制度"}, {"name": "1. 人类为什么需要配偶结合？"}, {"name": "2. 婚姻的神经基础：依恋系统"}, {"name": "3. 家庭的进化功能"}, {"name": "4. 婚姻的\"双面性\""}, {"name": "5. 现代婚姻的危机"}, {"name": "6. 家庭的生物学推演的核心结论"}]}, {"name": "6.6 艺术与音乐的神经基础", "children": [{"name": "艺术不是\"无用的奢侈品\"，是进化的适应器"}, {"name": "1. 音乐的进化功能"}, {"name": "2. 音乐的神经基础"}, {"name": "3. 视觉艺术的进化功能"}, {"name": "4. 视觉艺术的神经基础"}, {"name": "5. 文学和叙事的进化功能"}, {"name": "6. 叙事的神经基础：\"叙事运输\""}, {"name": "艺术与音乐的生物学推演的核心结论"}]}, {"name": "6.7 教育与竞争的生物学基础", "children": [{"name": "教育不是\"培养人才\"，是社会化和地位竞争的工具"}, {"name": "1. 教育的进化功能"}, {"name": "2. 现代教育的\"地位竞争\"功能"}, {"name": "3. 教育压力的生理影响"}, {"name": "4. \"学习\"的神经基础"}, {"name": "5. 教育的生物学推演的核心结论"}]}, {"name": "6.8 消费主义的多巴胺劫持", "children": [{"name": "消费主义不是\"经济发展\"，是多巴胺系统的系统性劫持"}, {"name": "1. 消费主义如何劫持多巴胺系统"}, {"name": "2. 消费主义的\"购买-满足-想要更多\"循环"}, {"name": "3. 消费主义与社会比较"}, {"name": "4. 消费主义的代价"}, {"name": "5. 如何摆脱消费主义的多巴胺劫持"}, {"name": "消费主义的生物学推演的核心结论"}]}, {"name": "6.9 社交媒体的进化错配", "children": [{"name": "社交媒体不是\"连接工具\"，是进化错配的极端案例"}, {"name": "1. 社交媒体如何利用进化机制"}, {"name": "2. 社交媒体的\"无限规模\"问题"}, {"name": "3. 社交媒体的成瘾机制"}, {"name": "4. 社交媒体的社会和心理代价"}, {"name": "5. 如何健康地使用社交媒体"}, {"name": "社交媒体的生物学推演的核心结论"}]}, {"name": "6.10 城市生活与感觉过载", "children": [{"name": "城市不是\"文明的象征\"，是神经系统的过载挑战"}, {"name": "1. 城市生活的感觉过载"}, {"name": "2. 感觉过载的神经机制"}, {"name": "3. 城市生活的\"社会过载\""}, {"name": "4. 城市生活的\"积极面\""}, {"name": "5. 如何在城市中管理感觉过载"}, {"name": "城市生活的生物学推演的核心结论"}]}, {"name": "本卷总结：文明与文化的生物学推演的核心逻辑", "children": [{"name": "1. 文明是大脑进化机制的\"放大\"和\"投射\""}, {"name": "2. 文明是\"双刃剑\""}, {"name": "3. 文明的\"进化错配\""}, {"name": "4. 认识到文明的生物学基础，能让你\"不被文明裹挟\""}]}]}, {"name": "07 解法体系", "children": [{"name": "解法体系总览：七层模型"}, {"name": "第一层：物理层", "children": [{"name": "7.1 食物与补剂"}, {"name": "7.2 运动与身体活动"}, {"name": "7.3 睡眠与环境调节"}]}, {"name": "第二层：生理层", "children": [{"name": "7.4 呼吸法、潜水反射、放松训练、生物反馈"}]}, {"name": "第三层：行为层", "children": [{"name": "7.5 行为激活、习惯设计、暴露疗法、行为实验"}]}, {"name": "第四层：认知层", "children": [{"name": "7.6 认知重构、情绪标记、去中心化、正念"}]}, {"name": "第五层：思想反构想层", "children": [{"name": "7.7 解构思想牢笼、认知解离、价值观澄清、存在主义重构、哲学实践"}]}, {"name": "第六层：社会层", "children": [{"name": "7.8 高质量社会连接、边界设定、社会支持系统"}]}, {"name": "第七层：意义层", "children": [{"name": "7.9 超越生存的目标、心流、创造、贡献"}]}, {"name": "解法体系总结：七层模型的使用原则", "children": [{"name": "1. 底层优先原则"}, {"name": "2. 组合使用原则"}, {"name": "3. 个体化原则"}, {"name": "4. 实践优先原则"}, {"name": "5. 专业帮助原则"}]}]}, {"name": "08 自我观察与记录体系", "children": [{"name": "8.1 身体状态觉察清单", "children": [{"name": "为什么需要身体状态觉察"}, {"name": "每日身体状态觉察清单"}, {"name": "快速版（30秒检查）"}, {"name": "身体状态与情绪的关联记录"}]}, {"name": "8.2 情绪触发点记录模板", "children": [{"name": "为什么需要记录情绪触发点"}, {"name": "情绪触发点记录模板"}, {"name": "情绪触发点的分类整理"}]}, {"name": "8.3 每日能量曲线追踪", "children": [{"name": "为什么需要追踪能量曲线"}, {"name": "每日能量曲线记录模板"}, {"name": "额外记录项"}, {"name": "能量曲线分析"}]}, {"name": "8.4 个人威胁信号库", "children": [{"name": "什么是个人威胁信号库"}, {"name": "个人威胁信号库模板"}, {"name": "威胁信号的分类"}, {"name": "威胁信号的\"去敏感化\"练习"}]}, {"name": "8.5 个人调节方案库", "children": [{"name": "什么是个人调节方案库"}, {"name": "个人调节方案库模板"}, {"name": "按情绪状态分类的\"快速方案\""}, {"name": "调节方案的\"个人验证\""}]}, {"name": "8.6 个人进化日志", "children": [{"name": "什么是个人进化日志"}, {"name": "每周回顾模板"}, {"name": "每月回顾模板"}, {"name": "每年回顾模板"}, {"name": "个人进化日志的注意事项"}]}]}, {"name": "09 附录速查表", "children": [{"name": "A. 关键术语定义"}, {"name": "B. 激素与神经递质功能对照表"}, {"name": "C. 脑区功能对照表"}, {"name": "D. 调节方案速查表", "children": [{"name": "按情绪状态"}, {"name": "按身体状态"}]}, {"name": "E. 食物补剂速查表", "children": [{"name": "按起效速度"}, {"name": "按场景"}]}, {"name": "F. 社会现象-触发机制-解法速查表"}, {"name": "G. 快速参考：10条核心原则"}]}]};
+</script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/mindmap.js"></script>
+</body>
+</html>
