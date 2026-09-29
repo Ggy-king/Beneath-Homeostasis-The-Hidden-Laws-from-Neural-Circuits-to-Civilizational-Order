@@ -1,0 +1,2 @@
+# Beneath-Homeostasis-The-Hidden-Laws-from-Neural-Circuits-to-Civilizational-Order
+Traces a continuous path from biological foundations, neural mechanisms, evolutionary psychology through emotion decoding, social phenomena, and civilizational construction—systematically demonstrating that every meaning-laden social phenomenon is, at its root, a product of bodily machinery: hormones, neural circuits, and evolutionary adaptation
